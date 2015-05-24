@@ -88,3 +88,11 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+Route::filter('session', function()
+{
+    if(!Session::has('nombre'))
+    {
+        return Redirect::to('/');
+    }
+});
