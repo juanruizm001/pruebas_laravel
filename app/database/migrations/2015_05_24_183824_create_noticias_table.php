@@ -18,8 +18,9 @@ class CreateNoticiasTable extends Migration {
 			$table->string('titulo');
 			$table->text('contenido');
 			$table->date('fechaPublicacion');
-			$table->boolean('activo');
-			$table->timestamps();
+            $table->boolean('activo');
+            $table->integer('idusuario');
+            $table->timestamps();
 		});
 	}
 

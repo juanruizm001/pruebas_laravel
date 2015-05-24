@@ -9,11 +9,15 @@ class NoticiaTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
+		foreach(range(1, 50) as $index)
 		{
-			Noticium::create([
-
-			]);
+			Noticia::create(array(
+                'titulo'=>$faker->sentence($nbWords = 6),
+                'contenido'=>$faker->text,
+                'fechaPublicacion'=>$faker->date($format = 'Y-m-d', $max = 'now'),
+                'activo'=>$faker->boolean,
+                'idusuario'=>$faker->randomDigit
+            ));
 		}
 	}
 
