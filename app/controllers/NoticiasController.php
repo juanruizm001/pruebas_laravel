@@ -47,7 +47,8 @@ class NoticiasController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$noticia = Noticia::find($id);
+        return View::make('noticias.show',compact('noticia'));
 	}
 
 	/**

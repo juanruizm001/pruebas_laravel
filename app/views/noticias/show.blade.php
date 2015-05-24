@@ -1,1 +1,2 @@
-C:\xampp\htdocs\pruebas_laravel\app/views/noticias/show.blade.php
+<h1>{{$noticia->titulo}}</h1>
+<p>{{$noticia->contenido}}</p>

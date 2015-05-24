@@ -1,5 +1,7 @@
 @foreach($noticias as $noticia)
 
-    <li>{{$noticia ->titulo}}</li>
-
+    <li>
+        <a href="{{ route('noticias.show', $noticia->id) }}" title="">
+            {{$noticia ->titulo}}</li>
+        </a>
 @endforeach
