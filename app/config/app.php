@@ -13,7 +13,8 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	//'debug' => false, //Modo de depuracion mostrando errores
+    'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
