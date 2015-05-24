@@ -47,36 +47,4 @@ Route::get('session/eliminar', function()
     return 'El campo nombre fue eliminado de la sesión actual';
 });
 
-
-
-/*
-Route::get('usuarios', function(){
-    return "Hola Usuarios";
-});
-
-Route::get('usuario/{nombre?}', function($nombre=null){
-    if (!$nombre)
-    {
-        return "Hola Usuario";
-    }
-    else
-    {
-        return "Hola $nombre";
-    }
-});
-
-Route::match(array('GET','POST'), '/', function()
-{
-   return "GET POST";
-});
-
-Route::any('foo', function()
-{
-   return 'foo';
-});
-
-Route::get('foo', array('https', function()
-{
-    return "Must be over HTTPS";
-}));
-*/
+Route::resource('noticias', 'NoticiasController');

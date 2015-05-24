@@ -1,0 +1,1 @@
+C:\xampp\htdocs\pruebas_laravel\app/views/noticias/create.blade.php
