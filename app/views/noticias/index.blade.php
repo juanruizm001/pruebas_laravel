@@ -1,1 +1,5 @@
-C:\xampp\htdocs\pruebas_laravel\app/views/noticias/index.blade.php
+@foreach($noticias as $noticia)
+
+    <li>{{$noticia ->titulo}}</li>
+
+@endforeach

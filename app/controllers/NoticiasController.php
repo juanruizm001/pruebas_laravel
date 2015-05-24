@@ -8,9 +8,12 @@ class NoticiasController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+
 	public function index()
 	{
-		//
+        $noticias = Noticia::all();
+        //return $noticias;
+        return View::make('noticias.index',compact('noticias'));
 	}
 
 	/**
