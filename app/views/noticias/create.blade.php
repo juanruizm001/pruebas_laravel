@@ -1,4 +1,4 @@
-{{ Form::open() }}
+{{ Form::open(array('url'=>'noticias')) }}
 
     {{ Form::label('titulo', 'Titulo de la noticia') }}: {{ Form::text('titulo') }}<br>
     Contenido: {{ Form::text('contenido') }}<br>
