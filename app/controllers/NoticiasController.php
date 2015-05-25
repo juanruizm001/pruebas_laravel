@@ -24,7 +24,7 @@ class NoticiasController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('noticias.create');
 	}
 
 	/**

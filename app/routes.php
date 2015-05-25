@@ -48,3 +48,8 @@ Route::get('session/eliminar', function()
 });
 
 Route::resource('noticias', 'NoticiasController');
+
+Route::post('noticias/create', function()
+{
+    return Input::get('__token');
+})->before('csrf');

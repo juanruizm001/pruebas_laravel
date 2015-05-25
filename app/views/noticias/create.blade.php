@@ -1,1 +1,11 @@
-C:\xampp\htdocs\pruebas_laravel\app/views/noticias/create.blade.php
+{{ Form::open() }}
+
+    {{ Form::label('titulo', 'Titulo de la noticia') }}: {{ Form::text('titulo') }}<br>
+    Contenido: {{ Form::text('contenido') }}<br>
+    Fecha de Publicación: {{ Form::text('fechaPublicacion') }}<br>
+    Publicado: {{ Form::text('activo') }}<br>
+    Creado Por: {{ Form::text('idusuario') }}<br>
+    <br>
+    {{ Form::submit('Crear Noticia') }}
+
+{{ Form::close() }}

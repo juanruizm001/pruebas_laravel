@@ -1,2 +1,2 @@
-<h1>{{$noticia->titulo}}</h1>
-<p>{{$noticia->contenido}}</p>
+<h1>{{ $noticia->titulo }}</h1>
+<p>{{ $noticia->contenido }}</p>
