@@ -1,3 +1,9 @@
+<?php $estado=\Illuminate\Support\Facades\Session::get('estado'); ?>
+
+@if ($estado == 'ok')
+La noticia se guardó con éxito <br>
+@endif
+
 @foreach($noticias as $noticia)
 
     <li>

@@ -35,14 +35,17 @@ class NoticiasController extends \BaseController {
 	 */
 	public function store()
 	{
-        DB::table('noticias')->insert(array(
-            'titulo' => Input::get('titulo'),
-            'contenido' => Input::get('contenido'),
-            'fechaPublicacion' => Input::get('fechaPublicacion'),
-            'activo' => Input::get('activo'),
-            'idusuario' => Input::get('idusuario')
-        ));
-        return "Los datos fueron almacenados correctamente.";
+        $noticia = new Noticia;
+        $noticia->titulo = Input::get('titulo');
+        $noticia->contenido = Input::get('contenido');
+        $noticia->fechaPublicacion = Input::get('fechaPublicacion');
+        $noticia->activo = Input::get('activo');
+        $noticia->idusuario = Input::get('idusuario');
+
+        $noticia->save();
+
+        return Redirect::to('noticias')->with('estado', 'ok');
+
         //return Input::get('__token'). Session::token();
 	}
 
