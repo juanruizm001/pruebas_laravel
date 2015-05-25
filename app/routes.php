@@ -54,3 +54,8 @@ Route::post('noticias/create', function()
 {
     return Input::get('__token');
 })->before('csrf');
+
+Route::get('hola', function()
+{
+    return View::make('hola');
+});
