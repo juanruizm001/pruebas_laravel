@@ -48,6 +48,7 @@ Route::get('session/eliminar', function()
 });
 
 Route::resource('noticias', 'NoticiasController');
+Route::controller('users', 'UserController');
 
 Route::post('noticias/create', function()
 {
