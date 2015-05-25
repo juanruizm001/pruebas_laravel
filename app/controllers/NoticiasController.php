@@ -44,7 +44,7 @@ class NoticiasController extends \BaseController {
 
         $noticia->save();
 
-        return Redirect::to('noticias')->with('estado', 'ok');
+        return Redirect::to('noticias')->with('estado', 'salvar');
 
         //return Input::get('__token'). Session::token();
 	}
@@ -95,7 +95,10 @@ class NoticiasController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$noticia = Noticia::find($id);
+        $noticia->delete();
+
+        return Redirect::to('noticias')->with('estado', 'delete');
 	}
 
 }
