@@ -11,6 +11,7 @@
 echo "Su nombre es $nombre.<br>";
 echo "Su apellido es $apellido.<br>";
 echo "Su telefono es $telefono.<br>";
+echo Session::get('mensaje');
 ?>
 </body>
 </html>
