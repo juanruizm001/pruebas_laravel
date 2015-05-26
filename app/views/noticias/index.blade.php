@@ -1,23 +1,42 @@
-{{HTML::script('http://code.jquery.com/jquery-2.1.4.min.js');}}
-{{HTML::script('js/restfulizer.js');}}
+@extends('layouts.master')
 
-<?php $estado=\Illuminate\Support\Facades\Session::get('estado'); ?>
+@section('cabecera')
+    @parent
+
+    {{ HTML::script('js/restfulizer.js'); }}
+@stop
+
+@section('content')
+
+<?php $estado=Session::get('estado'); ?>
 @if ($estado == 'salvar')
-    La noticia se guardó con éxito <br>
+    <div class="alert alert-success">
+        La noticia se guardó con éxito <br>
+    </div>
 @endif
 @if ($estado == 'delete')
-    La noticia fué eliminada <br>
+    <div class="alert alert-danger">
+        La noticia fué eliminada <br>
+    </div>
 @endif
 
-@foreach($noticias as $noticia)
+<h1>Listado de Noticias</h1>
+<ul class="list-group">
+    @foreach($noticias as $noticia)
 
-    <li>
-        <a href="{{ route('noticias.show', $noticia->id) }}" title="">
-            {{$noticia ->titulo}} </a> - <a href="{{ route('noticias.destroy', $noticia->id) }}"
-data-method="delete" rel="nofollow" data-confirm="¿Está seguro que desea eliminar la noticia?">Borrar</a>
+        <li class="list-group-item">
+            <a href="{{ route('noticias.show', $noticia->id) }}" title="">
+                {{$noticia ->titulo}} </a>
+            <a href="{{ route('noticias.destroy', $noticia->id) }}"
+               data-method="delete" rel="nofollow" data-confirm="¿Está seguro que desea eliminar la noticia?" class="btn btn-danger btn-xs">Borrar</a>
 
-        {{ Form::open(array('method'=>'DELETE','route'=>array('noticias.destroy', $noticia->id))) }}
-        {{ Form::submit('Eliminar', array('class'=>'Clase boton')) }}
-        {{ Form::close() }}
-    </li>
-@endforeach
+
+            {{--{{ Form::open(array('method'=>'DELETE','route'=>array('noticias.destroy',$noticia->id))) }}
+            {{ Form::submit('Eliminar',array('class'=>'Clase boton')) }}
+            {{ Form::close() }}--}}
+
+        </li>
+    @endforeach
+</ul>
+
+@stop
